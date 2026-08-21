@@ -1,0 +1,10 @@
+{
+    "name": "agent-thinking-phrases",
+    "private": true,
+    "scripts": {
+        "build": "node scripts/build.mjs"
+    },
+    "devDependencies": {
+        "jsonc-parser": "^3.3.1"
+    }
+}

@@ -10,7 +10,16 @@ Perfect for:
 
 ## Usage
 
-The phrases are stored in `phrases.json` as a simple JSON array. You can:
+The phrases are stored in `phrases.jsonc` and `phrases.json` as a simple JSON array. You can:
+
+**Build the JSON output** after changing `phrases.jsonc`:
+
+```sh
+npm install
+npm run build
+```
+
+This strips the JSONC comments and writes the generated `phrases.json` file.
 
 **Load and use** the phrases in your application:
 
@@ -18,7 +27,7 @@ The phrases are stored in `phrases.json` as a simple JSON array. You can:
    {
      "phrases": [
        "Doing the thing...",
-       "Pontificating...",
+       "Breaking the fourth wall...",
        // ... and many more
      ]
    }
