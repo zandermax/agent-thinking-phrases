@@ -33,6 +33,8 @@
         "Trying way too hard...",
         "Well, this is awkward...",
         "This is disappointing... I thought I was better than this...",
+        "Grasping at straws...",
+        "What's the average human lifespan? I need to know how long I have to do this...",
         //
         // Coding, debugging, and build system drama
         //
@@ -134,5 +136,7 @@
         "Deciding not to use violence...",
         "Not acting suspiciously at all...",
         "Aaaaaaaaahhhhhhhhhh!",
+        "Pretending to care...",
+        "Ugh."
     ]
 }

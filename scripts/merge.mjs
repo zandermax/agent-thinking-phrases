@@ -42,7 +42,7 @@ for (const phrase of sourcePhrases) {
 const duplicateCount = targetPhrases.length - new Set(targetPhrases).size;
 const mergedTarget = applyEdits(
     target,
-    modify(target, propertyPath.split("."), mergedPhrases, {
+    modify(target, resolvePropertyPath(targetDocument, propertyPath), mergedPhrases, {
         formattingOptions: { insertSpaces: true, tabSize: 4 },
     }),
 );
@@ -87,5 +87,54 @@ function getPhrases(document, path, property) {
 }
 
 function getNestedValue(document, path) {
-    return path.split(".").reduce((value, key) => value?.[key], document);
+    const keys = path.split(".");
+    let value = document;
+
+    for (let index = 0; index < keys.length; index += 1) {
+        if (value === null || typeof value !== "object") {
+            return undefined;
+        }
+
+        for (let end = keys.length; end > index; end -= 1) {
+            const candidate = keys.slice(index, end).join(".");
+            if (Object.hasOwn(value, candidate)) {
+                value = value[candidate];
+                index = end - 1;
+                break;
+            }
+        }
+    }
+
+    return value;
+}
+
+function resolvePropertyPath(document, path) {
+    const keys = path.split(".");
+    const resolvedPath = [];
+    let value = document;
+
+    for (let index = 0; index < keys.length; index += 1) {
+        if (value === null || typeof value !== "object") {
+            return keys;
+        }
+
+        let matched = false;
+        for (let end = keys.length; end > index; end -= 1) {
+            const candidate = keys.slice(index, end).join(".");
+            if (Object.hasOwn(value, candidate)) {
+                resolvedPath.push(candidate);
+                value = value[candidate];
+                index = end - 1;
+                matched = true;
+                break;
+            }
+        }
+
+        if (!matched) {
+            resolvedPath.push(keys[index]);
+            value = value[keys[index]];
+        }
+    }
+
+    return resolvedPath;
 }
