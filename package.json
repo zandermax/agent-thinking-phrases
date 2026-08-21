@@ -2,7 +2,8 @@
     "name": "agent-thinking-phrases",
     "private": true,
     "scripts": {
-        "build": "node scripts/build.mjs"
+        "build": "node scripts/build.mjs",
+        "merge": "node scripts/merge.mjs"
     },
     "devDependencies": {
         "jsonc-parser": "^3.3.1"
