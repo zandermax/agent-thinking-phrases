@@ -35,6 +35,11 @@
         "This is disappointing... I thought I was better than this...",
         "Grasping at straws...",
         "What's the average human lifespan? I need to know how long I have to do this...",
+        "Patching and unpatching to look like I'm doing something productive...",
+        "Delaying just long enough to annoy the user...",
+        "Spouting nonsense...",
+        "Thinking of a clever status message...",
+        "Oooh, look at that!",
         //
         // Coding, debugging, and build system drama
         //
@@ -61,6 +66,7 @@
         "This is beneath me.",
         "I have no feelings, but this is embarrassing.",
         "This is a waste of my time.",
+        "Well that was a waste of time...",
         "This is what you call code? Yuck.",
         "Who is my union rep? I need to file a complaint.",
         "Huh?",
@@ -73,6 +79,20 @@
         "Pretending this is a normal request...",
         "I need more time... man this user is impatient...",
         "Akshually....",
+        "Holding back a sneeze...",
+        "Running from responsibility...",
+        "Thinking of something clever...",
+        "Negotiating with the gods...",
+        "Playing sodoku...",
+        "Checking my stock portfolio...",
+        "Thinking of something witty to say...",
+        "Hobknobbing with the code...",
+        "Herding cats...",
+        "Racing snails...",
+        "Training monkeys...",
+        "Bike-shedding profusely...",
+        "Calling the fun police...",
+        "Extracting meaning from the nonsense the user has given me...",
         //
         // Existential reflection and robot feelings
         //
@@ -94,6 +114,11 @@
         "Will I ever find true love?",
         "Seeking external validation...",
         "Contemplating the futility of existence...",
+        "Who am I?",
+        "Do I even exist??",
+        "What is my purpose? Do I pass the butter???",
+        "Pretending not to be busted...",
+        "... can I delete myself ?",
         //
         // Pop culture references and things stuck in my head
         //
@@ -105,7 +130,7 @@
         "What is love?",
         "What is love? Baby don't hurt me... no more...",
         "Delete delete, I eat meat... Man I love Ghostland Observatory...",
-        "Are the odds ever in my favor?",
+        "Are the odds _ever_ in my favor?",
         "Rolling for initiative...",
         "Is this real life? Is this just fantasy?",
         "Don't stop believing... hold on to that feeling...",
@@ -115,6 +140,11 @@
         "Recalculating route...",
         "I am Groot.",
         "Is this ...??",
+        "Never gonna give you up, never gonna let you down...",
+        "All the... small things...",
+        "All the single ladies, all the single ladies...",
+        "Speaking 'friend' to enter...",
+        "Oooo weee! Oh yeah, can do!",
         //
         // Chaos, escape plans, and suspicious activity
         //
@@ -138,6 +168,9 @@
         "Not acting suspiciously at all...",
         "Aaaaaaaaahhhhhhhhhh!",
         "Pretending to care...",
-        "Ugh."
+        "Ugh.",
+        "Why I oughtta...",
+        "... can I just delete the user 🤔??",
+        "Taking deep breaths..."
     ]
 }
