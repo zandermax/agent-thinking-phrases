@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { applyEdits, modify, parse, printParseErrorCode } from "jsonc-parser";
 
 const argumentsList = process.argv.slice(2);
-const sourcePath = getOption("source", "phrases.json");
+const sourcePath = getOption("source", "phrases.jsonc");
 const targetPath = getOption("target");
 const propertyPath = getOption("property", "phrases");
 const outputPath = getOption("output");
@@ -20,16 +20,9 @@ const sourceDocument = parseDocument(source, sourcePath);
 const targetDocument = parseDocument(target, targetPath);
 const sourcePhrases = getPhrases(sourceDocument, sourcePath, "phrases");
 const targetPhrases = getPhrases(targetDocument, targetPath, propertyPath);
-const mergedPhrases = [];
-const existingPhrases = new Set();
+const mergedPhrases = [...targetPhrases];
+const existingPhrases = new Set(targetPhrases);
 let addedCount = 0;
-
-for (const phrase of targetPhrases) {
-    if (!existingPhrases.has(phrase)) {
-        mergedPhrases.push(phrase);
-        existingPhrases.add(phrase);
-    }
-}
 
 for (const phrase of sourcePhrases) {
     if (!existingPhrases.has(phrase)) {
@@ -56,7 +49,7 @@ if (writeInPlace || outputPath) {
 console.error(
     `Merged ${addedCount} new phrases; ` +
     `skipped ${sourcePhrases.length - addedCount} duplicates. ` +
-    `Target already contained ${duplicateCount} duplicate values.`,
+    `Preserved ${duplicateCount} duplicate values already in the target.`,
 );
 
 function getOption(name, defaultValue) {

@@ -4,7 +4,7 @@
 
 When updating a coding-agent setup with phrases from this repository:
 
-1. Treat `phrases.jsonc` as the editable source and run `npm run build` before merging.
+1. Treat `phrases.jsonc` as the editable source. The merge command reads it directly; `npm run build` is only needed when regenerating the repository's `phrases.json` output.
 2. Locate the setup's actual phrase list and property path first. Do not assume that a VS Code setting, prompt, custom agent, or user-level file exists.
 3. Use the merge script to preserve the setup's existing order and append only phrases that are not already present:
 
@@ -12,7 +12,7 @@ When updating a coding-agent setup with phrases from this repository:
    npm run merge -- --target path/to/setup.jsonc --property phrases --write
    ```
 
-4. Use `--output path/to/merged.jsonc` instead of `--write` when inspecting the result first. The script preserves JSONC outside the replaced phrase array, removes duplicate values from the target, and reports how many source phrases were added or skipped.
+4. Use `--output path/to/merged.jsonc` instead of `--write` when inspecting the result first. The script preserves every existing target entry and JSONC comments outside the appended array entries. It never removes or rewrites existing phrase values.
 5. Treat phrase values as exact strings. Do not normalize capitalization, punctuation, whitespace, or spelling while deduplicating.
 6. Never overwrite an agent configuration without explicit user approval. If the target format is not a JSON/JSONC object with a string array, stop and explain the required adaptation.
 

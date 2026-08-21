@@ -28,16 +28,15 @@ to do it. Run these commands from the repository directory:
 
 ```sh
 npm install
-npm run build
-npm run merge -- \
-  --target "$HOME/Library/Application Support/Code/User/settings.json" \
-  --property chat.agent.thinking.phrases.phrases \
-  --write
+npm run merge:vscode
 ```
 
-The merge keeps your existing order, appends only new phrases, removes
-duplicates, and leaves the existing `mode` setting unchanged. Reload VS Code
-afterward if the new phrases do not appear immediately.
+The merge keeps every existing entry and its order, appends only new phrases,
+does not remove existing duplicates, and leaves the existing `mode` setting
+unchanged. It reads `phrases.jsonc` directly, so it does not edit this
+repository. Reload VS Code afterward if the new phrases do not appear
+immediately. It reads `phrases.jsonc` directly, so it does not edit this
+repository.
 
 To inspect the result before changing your settings, use `--output` instead of
 `--write`:

@@ -3,7 +3,8 @@
     "private": true,
     "scripts": {
         "build": "node scripts/build.mjs",
-        "merge": "node scripts/merge.mjs"
+        "merge": "node scripts/merge.mjs",
+        "merge:vscode": "node scripts/merge-vscode.mjs"
     },
     "devDependencies": {
         "jsonc-parser": "^3.3.1"
