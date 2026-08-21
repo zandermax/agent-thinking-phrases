@@ -72,6 +72,10 @@ function parseDocument(content, path) {
 function getPhrases(document, path, property) {
     const phrases = property === "phrases" ? document?.phrases : getNestedValue(document, property);
 
+    if (phrases === undefined) {
+        return [];
+    }
+
     if (!Array.isArray(phrases) || phrases.some((phrase) => typeof phrase !== "string")) {
         throw new Error(`Expected ${path} to contain a string array at "${property}"`);
     }
@@ -88,13 +92,19 @@ function getNestedValue(document, path) {
             return undefined;
         }
 
+        let matched = false;
         for (let end = keys.length; end > index; end -= 1) {
             const candidate = keys.slice(index, end).join(".");
             if (Object.hasOwn(value, candidate)) {
                 value = value[candidate];
                 index = end - 1;
+                matched = true;
                 break;
             }
+        }
+
+        if (!matched) {
+            return undefined;
         }
     }
 

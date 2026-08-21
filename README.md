@@ -34,9 +34,9 @@ npm run merge:vscode
 The merge keeps every existing entry and its order, appends only new phrases,
 does not remove existing duplicates, and leaves the existing `mode` setting
 unchanged. It reads `phrases.jsonc` directly, so it does not edit this
-repository. Reload VS Code afterward if the new phrases do not appear
-immediately. It reads `phrases.jsonc` directly, so it does not edit this
-repository.
+repository. If the VS Code setting does not exist yet, `merge:vscode` creates it
+with `mode` set to `append`. Reload VS Code afterward if the new phrases do not
+appear immediately.
 
 To inspect the result before changing your settings, use `--output` instead of
 `--write`:

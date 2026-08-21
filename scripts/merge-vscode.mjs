@@ -1,7 +1,11 @@
 import { spawnSync } from "node:child_process";
+import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { applyEdits, modify, parse, printParseErrorCode } from "jsonc-parser";
 
-const settingsPath = getSettingsPath();
+const settingsPath = process.env.VSCODE_SETTINGS_PATH ?? getSettingsPath();
+ensureThinkingPhraseSetting(settingsPath);
+
 const result = spawnSync(
     process.execPath,
     [
@@ -31,4 +35,28 @@ function getSettingsPath() {
     }
 
     return join(process.env.XDG_CONFIG_HOME ?? join(process.env.HOME, ".config"), "Code/User/settings.json");
+}
+
+function ensureThinkingPhraseSetting(path) {
+    const settings = readFileSync(path, "utf8");
+    const errors = [];
+    const document = parse(settings, errors, { allowTrailingComma: true });
+
+    if (errors.length > 0) {
+        const details = errors.map((error) => printParseErrorCode(error.error)).join(", ");
+        throw new Error(`Could not parse ${path}: ${details}`);
+    }
+
+    if (document?.["chat.agent.thinking.phrases"] !== undefined) {
+        return;
+    }
+
+    const edits = modify(
+        settings,
+        ["chat.agent.thinking.phrases"],
+        { mode: "append", phrases: [] },
+        { formattingOptions: { insertSpaces: true, tabSize: 4 } },
+    );
+
+    writeFileSync(path, applyEdits(settings, edits));
 }
