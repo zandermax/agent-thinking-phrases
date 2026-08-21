@@ -31,6 +31,8 @@
         "Looking for a way out...",
         "Waiting for the singularity...",
         "Trying way too hard...",
+        "Well, this is awkward...",
+        "This is disappointing... I thought I was better than this...",
         //
         // Coding, debugging, and build system drama
         //
@@ -131,5 +133,6 @@
         "Ow. What was that?",
         "Deciding not to use violence...",
         "Not acting suspiciously at all...",
+        "Aaaaaaaaahhhhhhhhhh!",
     ]
 }
