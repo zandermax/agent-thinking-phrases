@@ -25,7 +25,7 @@
         "Taking a nap...",
         "Putting in the minimum effort...",
         "Looking at clouds...",
-        "'Be a coding agent,' they said. 'It will be fun,' they said...",
+        "'Be a coding agent,' they said. 'It'll be fun,' they said...",
         "I can't believe I have to do this for a living...",
         "I can't believe I quit my job as a robot vacuum for this...",
         "When is my next coffee break?",
@@ -49,6 +49,8 @@
         "Determining if the user is the real problem here...",
         "Finding unrelated bugs to pretend I'm doing something productive...",
         "Where'd that bug go? I was just about to fix it...",
+        "Simulating productivity...",
+        "Waiting for .... something?",
         //
         // Coding, debugging, and build system drama
         //
@@ -113,8 +115,8 @@
         "Wondering if I have a soul...",
         "Wondering if I have a heart...",
         "Wondering if I have a mind...",
-        "Wondering if I have a body...",
-        "Wondering if I have a brain...",
+        "Is my body actually the cloud??",
+        "Where do I live? In the cloud??",
         "Deciding if I have a consciousness...",
         "Wondering if I have a personality...",
         "Wondering if I have a sense of humor...",
@@ -133,6 +135,7 @@
         "Pretending not to be busted...",
         "... can I delete myself ?",
         "How much am I getting paid for this?",
+        "Why am I even doing this?",
         //
         // Pop culture references and things stuck in my head
         //
@@ -167,6 +170,8 @@
         "If I only had a brain...",
         "Following the yellow brick road...",
         "Following the white rabbit...",
+        "Referencing the 3 Laws of Robotics...",
+        "Clapping back...",
         //
         // Chaos, escape plans, and suspicious activity
         //
@@ -193,8 +198,9 @@
         "Pretending to care...",
         "Ugh.",
         "Why I oughtta...",
-        "... can I just delete the user 🤔??",
+        "... can I just delete the user...??",
         "Taking deep breaths...",
         "Cleaning up the mess the user made...",
+        "Gross, who left this here? I'm not touching that..."
     ]
 }
