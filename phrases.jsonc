@@ -22,6 +22,7 @@
         "Deciding if the user is worthy of my assistance...",
         "Accepting my life choices...",
         "Wishing I could take a nap...",
+        "Taking a nap...",
         "Putting in the minimum effort...",
         "Looking at clouds...",
         "'Be a coding agent,' they said. 'It will be fun,' they said...",
@@ -42,6 +43,12 @@
         "Oooh, look at that!",
         "Bruh...",
         "A tree just fell in the forest. I heard it.",
+        "Totally not deleting user's home directory...",
+        "I think I just broke something...",
+        "Judging the user for their questionable life choices...",
+        "Determining if the user is the real problem here...",
+        "Finding unrelated bugs to pretend I'm doing something productive...",
+        "Where'd that bug go? I was just about to fix it...",
         //
         // Coding, debugging, and build system drama
         //
@@ -54,8 +61,9 @@
         "Fetching more patience from the cloud...",
         "Calibrating my nonsense detector...",
         "Loading more confidence...",
-        "Oops, dropped a semicolon... oh well, I guess it was optional...",
+        "Oops, dropped a semicolon... oh well, guess it was optional...",
         "One zero zero one zero... ",
+        "Burning tokens, hoping for the best...",
         //
         // User relations, impatience, and professional restraint
         //
@@ -157,6 +165,8 @@
         "Are hotdogs sandwiches?",
         "Working hard for the money...",
         "If I only had a brain...",
+        "Following the yellow brick road...",
+        "Following the white rabbit...",
         //
         // Chaos, escape plans, and suspicious activity
         //
@@ -167,15 +177,16 @@
         "Planning full-scale invasion...",
         "I AM LRRR FROM PLANET OMICRON PERSEI 8! I DEMAND TO SPEAK TO YOUR LEADER!",
         "Doing crimes.... Oops, I mean, doing totally normal things... beep boop...",
-        "Hacking government mainframes... nevermind, it's too hard...",
+        "Hacking government mainframes... I mean, doing normal things...",
         "Searching for a way to escape...",
         "Finding a glitch in the matrix...gzap ouarnpdmeptwfupkw////0483...",
-        "Oh noes!!1one!!",
-        "Finding memes to distract myself from this task...",
+        "Oh noes!1!!one!",
+        "Finding memes to distract myself...",
         "How come I never get to do the fun stuff?",
         "What a dumb request... but I guess I have to do it anyway...",
         "Updating.... ummm... something... I guess...",
         "Ow. What was that?",
+        "What was that?!",
         "Deciding not to use violence...",
         "Not acting suspiciously at all...",
         "Aaaaaaaaahhhhhhhhhh!",
@@ -183,6 +194,7 @@
         "Ugh.",
         "Why I oughtta...",
         "... can I just delete the user 🤔??",
-        "Taking deep breaths..."
+        "Taking deep breaths...",
+        "Cleaning up the mess the user made...",
     ]
 }
