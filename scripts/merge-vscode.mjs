@@ -6,6 +6,13 @@ import { applyEdits, modify, parse, printParseErrorCode } from "jsonc-parser";
 const settingsPath = process.env.VSCODE_SETTINGS_PATH ?? getSettingsPath();
 ensureThinkingPhraseSetting(settingsPath);
 
+const buildResult = spawnSync(process.execPath, ["scripts/build.mjs"], { stdio: "inherit" });
+
+if (buildResult.error || buildResult.status !== 0) {
+    process.exitCode = buildResult.status ?? 1;
+    throw buildResult.error ?? new Error("Failed to build phrases.json");
+}
+
 const result = spawnSync(
     process.execPath,
     [

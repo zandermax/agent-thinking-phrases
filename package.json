@@ -2,13 +2,18 @@
     "name": "agent-thinking-phrases",
     "private": true,
     "scripts": {
+        "prepare": "husky",
         "build": "node scripts/build.mjs",
+        "premerge": "npm run build",
         "merge": "node scripts/merge.mjs",
         "merge:vscode": "node scripts/merge-vscode.mjs",
+        "prereplace": "npm run build",
         "replace": "node scripts/replace.mjs",
-        "replace:vscode": "node scripts/replace-vscode.mjs"
+        "replace:vscode": "node scripts/replace-vscode.mjs",
+        "sort": "node scripts/sort-phrases.mjs"
     },
     "devDependencies": {
+        "husky": "^9.1.7",
         "jsonc-parser": "^3.3.1"
     }
 }

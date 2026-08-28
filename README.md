@@ -10,9 +10,11 @@ Perfect for:
 
 ## Usage
 
-The phrases are stored in `phrases.jsonc` and `phrases.json` as a simple JSON array. You can:
+The phrases are split by theme into `phrases/*.jsonc` files (e.g. `phrases/existential_dread.jsonc`,
+`phrases/rogue_ai.jsonc`), each starting with a comment describing its theme. `phrases.json` is the
+generated, combined output — don't edit it directly.
 
-**Build the JSON output** after changing `phrases.jsonc`:
+**Build the combined JSON output** after changing any file in `phrases/`:
 
 ```sh
 npm install
@@ -20,6 +22,18 @@ npm run build
 ```
 
 This strips the JSONC comments and writes the generated `phrases.json` file.
+
+A pre-commit hook (via Husky) automatically sorts the `phrases` array within
+each `phrases/*.jsonc` file alphabetically and re-stages any files it changes,
+so you don't need to keep them sorted by hand. You can also run it manually:
+
+```sh
+npm run sort
+```
+
+`npm run merge`, `npm run merge:vscode`, `npm run replace`, and
+`npm run replace:vscode` all rebuild `phrases.json` from `phrases/` first, so
+it's always up to date with your latest edits.
 
 ## VS Code
 

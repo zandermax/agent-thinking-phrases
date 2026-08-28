@@ -10,7 +10,7 @@ const writeInPlace = argumentsList.includes("--write");
 
 if (!targetPath || (writeInPlace && outputPath)) {
     throw new Error(
-        "Usage: npm run merge -- --target <file> [--property <name>] [--source <file>] [--output <file> | --write]",
+        "Usage: npm run replace -- --target <file> [--property <name>] [--source <file>] [--output <file> | --write]",
     );
 }
 
@@ -20,36 +20,22 @@ const sourceDocument = parseDocument(source, sourcePath);
 const targetDocument = parseDocument(target, targetPath);
 const sourcePhrases = getPhrases(sourceDocument, sourcePath, "phrases");
 const targetPhrases = getPhrases(targetDocument, targetPath, propertyPath);
-const mergedPhrases = [...targetPhrases];
-const existingPhrases = new Set(targetPhrases);
-let addedCount = 0;
 
-for (const phrase of sourcePhrases) {
-    if (!existingPhrases.has(phrase)) {
-        mergedPhrases.push(phrase);
-        existingPhrases.add(phrase);
-        addedCount += 1;
-    }
-}
-
-const duplicateCount = targetPhrases.length - new Set(targetPhrases).size;
-const mergedTarget = applyEdits(
+const replacedTarget = applyEdits(
     target,
-    modify(target, resolvePropertyPath(targetDocument, propertyPath), mergedPhrases, {
+    modify(target, resolvePropertyPath(targetDocument, propertyPath), sourcePhrases, {
         formattingOptions: { insertSpaces: true, tabSize: 4 },
     }),
 );
 
 if (writeInPlace || outputPath) {
-    await writeFile(outputPath ?? targetPath, mergedTarget);
+    await writeFile(outputPath ?? targetPath, replacedTarget);
 } else {
-    process.stdout.write(mergedTarget);
+    process.stdout.write(replacedTarget);
 }
 
 console.error(
-    `Merged ${addedCount} new phrases; ` +
-    `skipped ${sourcePhrases.length - addedCount} duplicates. ` +
-    `Preserved ${duplicateCount} duplicate values already in the target.`,
+    `Replaced ${targetPhrases.length} phrase(s) in the target with ${sourcePhrases.length} phrase(s) from the source.`,
 );
 
 function getOption(name, defaultValue) {

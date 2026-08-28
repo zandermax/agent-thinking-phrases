@@ -4,7 +4,7 @@
 
 When updating a coding-agent setup with phrases from this repository:
 
-1. Treat `phrases.jsonc` as the editable source. The merge command reads it directly; `npm run build` is only needed when regenerating the repository's `phrases.json` output.
+1. Treat the files in `phrases/*.jsonc` as the editable source, each themed and prefixed with a description comment. The merge command reads the combined `phrases.json`, which is generated from `phrases/*.jsonc` via `npm run build`; the `merge`/`merge:vscode`/`replace`/`replace:vscode` npm scripts rebuild it automatically first.
 2. Locate the setup's actual phrase list and property path first. Do not assume that a VS Code setting, prompt, custom agent, or user-level file exists.
 3. Use the merge script to preserve the setup's existing order and append only phrases that are not already present:
 
