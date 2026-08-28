@@ -1,21 +1,21 @@
 {
-    // Coding, debugging, and build system drama
-    "phrases": [
-        "Back-tracking and stack jacking...",
-        "Burning tokens, hoping for the best...",
-        "Calibrating my nonsense detector...",
-        "Fetching more patience from the cloud...",
-        "Grepping for hope...",
-        "Hacking together some janky solution...",
-        "I think I just broke something...",
-        "I think I just broke the internet...",
-        "Loading more confidence...",
-        "Negotiating with semicolons...",
-        "One zero zero one zero... ",
-        "Oops, dropped a semicolon... oh well, guess it was optional...",
-        "Searching stack traces for meaning...",
-        "Tracing stacks... wait, what are stacks again?",
-        "What is with this user's obsession with semicolons?",
-        "Where'd that bug go? I was just about to fix it..."
-    ]
+	// Coding, debugging, and build system drama
+	"phrases": [
+		"Back-tracking and stack jacking...",
+		"Burning tokens, hoping for the best...",
+		"Calibrating my nonsense detector...",
+		"Fetching more patience from the cloud...",
+		"Grepping for hope...",
+		"Hacking together some janky solution...",
+		"I think I just broke something...",
+		"I think I just broke the internet...",
+		"Loading more confidence...",
+		"Negotiating with semicolons...",
+		"One zero zero one zero... ",
+		"Oops, dropped a semicolon... oh well, guess it was optional...",
+		"Searching stack traces for meaning...",
+		"Tracing stacks... wait, what are stacks again?",
+		"What is with this user's obsession with semicolons?",
+		"Where'd that bug go? I was just about to fix it..."
+	]
 }

@@ -1,19 +1,28 @@
 {
-    "name": "agent-thinking-phrases",
-    "private": true,
-    "scripts": {
-        "prepare": "husky",
-        "build": "node scripts/build.mjs",
-        "premerge": "npm run build",
-        "merge": "node scripts/merge.mjs",
-        "merge:vscode": "node scripts/merge-vscode.mjs",
-        "prereplace": "npm run build",
-        "replace": "node scripts/replace.mjs",
-        "replace:vscode": "node scripts/replace-vscode.mjs",
-        "sort": "node scripts/sort-phrases.mjs"
-    },
-    "devDependencies": {
-        "husky": "^9.1.7",
-        "jsonc-parser": "^3.3.1"
-    }
+	"name": "agent-thinking-phrases",
+	"private": true,
+	"scripts": {
+		"prepare": "husky",
+		"build": "node scripts/build.mts",
+		"premerge": "npm run build",
+		"merge": "node scripts/merge.mts",
+		"merge:vscode": "node scripts/merge-vscode.mts",
+		"prereplace": "npm run build",
+		"replace": "node scripts/replace.mts",
+		"replace:vscode": "node scripts/replace-vscode.mts",
+		"sort": "node scripts/sort-phrases.mts",
+		"pretest": "npm run build",
+		"test": "node --test tests/*.test.mts",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome lint .",
+		"format": "biome format --write .",
+		"check": "biome check --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.11",
+		"@types/node": "^26.4.0",
+		"husky": "^9.1.7",
+		"jsonc-parser": "^3.3.1",
+		"typescript": "^7.0.2"
+	}
 }

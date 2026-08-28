@@ -1,2 +1,2 @@
-node scripts/sort-phrases.mjs
+node scripts/sort-phrases.mts
 git add phrases/*.jsonc

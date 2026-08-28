@@ -35,6 +35,30 @@ npm run sort
 `npm run replace:vscode` all rebuild `phrases.json` from `phrases/` first, so
 it's always up to date with your latest edits.
 
+## Tests
+
+`tests/scripts.test.mts` exercises `build`, `merge`, `merge:vscode`, `replace`,
+`replace:vscode`, and `sort-phrases` end-to-end against scratch files (created
+in a temp directory and cleaned up automatically), so you don't need to
+manually set up a scratch settings file to verify these scripts work:
+
+```sh
+npm test
+```
+
+## Development
+
+The scripts are written in TypeScript (`.mts` files) and run directly by Node's
+built-in type stripping — no build step or extra runtime dependency required.
+Indentation is tabs everywhere, enforced by [Biome](https://biomejs.dev):
+
+```sh
+npm run typecheck   # tsc --noEmit
+npm run lint         # biome lint
+npm run format       # biome format --write
+npm run check        # biome check --write (lint + format)
+```
+
 ## VS Code
 
 You can merge the phrases into VS Code's user settings without asking an agent
