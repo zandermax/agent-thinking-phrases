@@ -68,6 +68,35 @@ Use `--write` only after reviewing the preview. Phrase values are treated as
 exact strings, so capitalization, punctuation, whitespace, and spelling are
 significant.
 
+To replace the target phrase array completely instead of merging, use
+`replace`. It keeps unrelated settings and comments, but removes target-only
+phrases and preserves the source array exactly:
+
+```sh
+npm run replace -- \
+  --target path/to/agent.jsonc \
+  --property agent.phrases \
+  --output /tmp/agent.with-phrases.jsonc
+```
+
+Review the preview, then use `--write` to update the target in place:
+
+```sh
+npm run replace -- \
+  --target path/to/agent.jsonc \
+  --property agent.phrases \
+  --write
+```
+
+To replace the phrases in VS Code user settings directly, run:
+
+```sh
+npm run replace:vscode
+```
+
+This uses the same settings path as `merge:vscode` and can be pointed at a
+different file for testing with `VSCODE_SETTINGS_PATH`.
+
 **Load and use** the phrases in your application:
 
    ```json

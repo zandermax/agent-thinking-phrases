@@ -4,7 +4,9 @@
     "scripts": {
         "build": "node scripts/build.mjs",
         "merge": "node scripts/merge.mjs",
-        "merge:vscode": "node scripts/merge-vscode.mjs"
+        "merge:vscode": "node scripts/merge-vscode.mjs",
+        "replace": "node scripts/replace.mjs",
+        "replace:vscode": "node scripts/replace-vscode.mjs"
     },
     "devDependencies": {
         "jsonc-parser": "^3.3.1"
